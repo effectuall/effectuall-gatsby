@@ -73,6 +73,7 @@ const IndexPage = () =>{
   // initNetlifyIdentity();
   return(
     <Layout>
+      <NetlifyIdentity/>
       <div className={styles.textCenter}>
         <StaticImage
           src="../images/avatar-icon.png"
@@ -134,12 +135,12 @@ function initNetlifyIdentity() {
 function openNetlifyModal() {
   const netlifyIdentity = window.netlifyIdentity;
   if(netlifyIdentity)
-  netlifyIdentity.open();
+    netlifyIdentity.open();
   else
   console.log('netlifyIdentity not defined')
 }
 
-class netlifyIdentity extends Component {
+class NetlifyIdentity extends Component {
   componentDidMount() {
     initNetlifyIdentity();
   }
